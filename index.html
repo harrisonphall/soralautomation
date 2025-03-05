@@ -81,6 +81,7 @@
         </form>
         <button class="signup-btn" onclick="window.location.href='signup.html'">Don't have an account? Sign up</button>
     </div>
+
     <script>
         function loginUser() {
             const email = document.getElementById("email").value;
@@ -90,7 +91,7 @@
 
             if (storedUser && storedUser.password === password) {
                 alert("Login successful!");
-                localStorage.setItem("userLoggedIn", email); // Save login session
+                localStorage.setItem("userLoggedIn", email); // Store login session
                 window.location.href = "form.html"; // Redirect to form page
             } else {
                 alert("Invalid email or password. Please try again.");
@@ -100,19 +101,6 @@
         // Auto-redirect if already logged in
         if (localStorage.getItem("userLoggedIn")) {
             window.location.href = "form.html";
-        }
-    </script>
-</body>
-</html>
-
-
-            if (username && password) {
-                // Here, you can add authentication logic if needed.
-                sessionStorage.setItem("userLoggedIn", "true"); // Store login status
-                window.location.href = "form.html"; // Redirect after login
-            } else {
-                alert("Please enter valid credentials!");
-            }
         }
     </script>
 </body>
