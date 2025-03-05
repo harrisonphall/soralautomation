@@ -77,9 +77,9 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form>
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
+        <form onsubmit="event.preventDefault(); loginUser();">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
         <div class="google-btn-container">
@@ -100,8 +100,20 @@
             sessionStorage.setItem("userLoggedIn", "true"); // Store login status
             window.location.href = "form.html"; // Redirect to form page
         }
+
+        function loginUser() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username && password) {
+                // Here, you can add authentication logic if needed.
+                sessionStorage.setItem("userLoggedIn", "true"); // Store login status
+                window.location.href = "form.html"; // Redirect after login
+            } else {
+                alert("Please enter valid credentials!");
+            }
+        }
     </script>
 </body>
 </html>
 
-</html>
