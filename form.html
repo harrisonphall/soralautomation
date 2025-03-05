@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+        }
+        .form-container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Meeting Details</h2>
+        <form>
+            <label for="meeting-type">Meeting Type</label>
+            <select id="meeting-type" required>
+                <option value="">Select a type</option>
+                <option value="Administrative Tasks">Administrative Tasks</option>
+                <option value="Mediation">Mediation</option>
+                <option value="Hearing">Hearing</option>
+                <option value="Discovery">Discovery</option>
+                <option value="Document Review/Preparation">Document Review/Preparation</option>
+                <option value="Correspondence">Correspondence</option>
+                <option value="Drafting">Drafting</option>
+                <option value="Litigation">Litigation</option>
+                <option value="Consultation">Consultation</option>
+            </select>
+
+            <label for="description">Description</label>
+            <input type="text" id="description" placeholder="Enter details" required>
+
+            <label for="billable-hours">Billable Hours</label>
+            <input type="number" id="billable-hours" placeholder="Enter hours" required>
+
+            <label for="date-time">Date & Time</label>
+            <input type="datetime-local" id="date-time" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
